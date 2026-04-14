@@ -1,0 +1,319 @@
+:root {
+  --primary-blue: #0b8de4;
+  --primary-green: #2ecc71; /* Added back for price tags/status */
+  --dark-blue: #2c3e50;
+  --soft-gray: #f8f9fa;
+  --text-gray: #555;
+}
+
+/* Base Sections */
+#hero-kost {
+  padding: 80px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #271c42 0%, #4874a5 100%);
+  color: white;
+}
+
+.cta-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Space between buttons if you add more later */
+  margin-top: 30px;
+}
+
+/* Base style for the primary button */
+.BookingButton {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 50px; /* Rounded pill shape */
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 20px rgba(23, 114, 232, 0.4);
+}
+
+.BookingButton:hover {
+  transform: translateY(-4px); /* Moves up slightly */
+  background-color: #27aea5;
+  box-shadow: 0 10px 25px rgba(60, 235, 241, 0.5);
+}
+
+.BookingButton:active {
+  transform: translateY(-1px);
+}
+
+.highlight {
+  color: var(--primary-blue);
+}
+
+.grid-fasilitas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards in the flex row */
+  gap: 30px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Floating Admin Trigger */
+.admin-trigger {
+  position: static;
+  top: 20px;
+  right: 20px;
+  background: white;
+  padding: 8px 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  z-index: 100;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* Login Modal */
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+}
+
+/* Admin Panel Styles */
+#admin-panel {
+  background: #f0f2f5;
+  padding: 40px 20px;
+  border-bottom: 2px solid #ddd;
+}
+
+.admin-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.admin-control-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.admin-control-card input {
+  width: 100%;
+  padding: 8px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Floating Rules Button */
+.rules-trigger {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--dark-blue);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  z-index: 99;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+.rules-trigger:hover {
+  transform: scale(1.05);
+  background: #34495e;
+}
+/* Rules Modal Styling */
+.rules-box {
+  background: white;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+}
+
+.rules-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.rules-header h3 {
+  margin: 0;
+  color: var(--dark-blue);
+}
+
+.close-x {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #888;
+}
+
+.rules-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.rules-list li {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+.understand-btn {
+  width: 100%;
+  background: var(--primary-green);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Card Container */
+.card {
+  background: white;
+  width: 320px; /* Fixed width for consistency */
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Image handling */
+.room-image-container {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  cursor: zoom-in; /* Indicates the image is clickable */
+}
+
+.room-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .room-photo {
+  transform: scale(1.1);
+}
+
+.price-tag {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  background: var(--primary-green);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Availability Status Container */
+.availability-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background-color: #e8f5e9;
+  border: 1px solid var(--primary-green);
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.count-text {
+  color: #27ae60;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  background-color: var(--primary-green);
+  border-radius: 50%;
+  animation: pulse-green 2s infinite;
+}
+
+/* Modal Popup Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+}
+
+.modal-content img {
+  width: 100%;
+  max-height: 80vh;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.close-button {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 45px;
+  cursor: pointer;
+}
+
+/* Animations */
+@keyframes pulse-green {
+  0% { transform: scale(0.9); opacity: 1; }
+  70% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(0.9); opacity: 1; }
+}
+
+.room-details {
+  padding: 25px;
+}
+
+.amenities-list {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
