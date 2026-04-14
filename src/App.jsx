@@ -12,8 +12,20 @@ function App() {
 
   // --- States for Dorm Data (Manageable) ---
   const [rooms, setRooms] = useState([
-    { id: 1, type: "Standard", price: "350.000", count: 13, img: "https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" },
-    { id: 2, type: "+ Kamar Mandi", price: "450.000", count: 2, img: "https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" }
+    { 
+    id: 1, 
+    type: "Standard", 
+    price: "350.000", 
+    count: 0, // Initial value before admin input
+    img: "https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+  },
+  { 
+    id: 2, 
+    type: "+ Kamar Mandi", 
+    price: "450.000", 
+    count: 0, // Initial value before admin input
+    img: "https://images.unsplash.com/photo-1486304873000-235643847519?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+  }
   ]);
 
   const handleLogin = () => {
@@ -26,8 +38,16 @@ function App() {
   };
 
   const updateRoom = (id, field, value) => {
-    setRooms(rooms.map(r => r.id === id ? { ...r, [field]: value } : r));
+  setRooms(rooms.map(r => {
+      if (r.id === id) {
+        // Logic: If updating 'count', turn the input string into a Number
+        const processedValue = field === 'count' ? (parseInt(value, 10) || 0) : value;
+        return { ...r, [field]: processedValue };
+      }
+      return r;
+    }));
   };
+
   return (
   <>
   {/* --- Floating Rules Button --- */}
@@ -87,8 +107,10 @@ function App() {
               <div className="room-details">
                 <h3>Tipe Kamar {room.type}</h3>
                 <div className="availability-container">
-                  <span className="dot"></span>
-                  <span className="count-text">Tersedia: {room.count} Kamar</span>
+                  <span className={`dot ${room.count > 0 ? 'green' : 'red'}`}></span>
+                  <span className="count-text">
+                    {room.count > 0 ? `Tersedia: ${room.count} Kamar` : "Kamar Habis / Penuh"}
+                  </span>
                 </div>
               </div>
             </div>

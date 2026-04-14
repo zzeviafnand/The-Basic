@@ -21,7 +21,8 @@ function AdminDashboard({ rooms, updateRoom }) {
             <input 
               type="number" 
               value={room.count} 
-              onChange={(e) => updateRoom(room.id, 'count', e.target.value)} 
+              onChange={(e) => updateRoom(room.id, 'count', e.target.value)}
+              placeholder='Masukkan sisa kamar...' 
             />
           </div>
         ))}
