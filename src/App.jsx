@@ -62,7 +62,7 @@ function App() {
         <h1>KOS <span className="highlight">PUTRA</span></h1>
         <p>Hunian strategis di pusat kota dengan fasilitas lengkap.</p>
         <div className="cta-group">
-          <button className="BookingButton" onClick={() => window.open('https:/wa.me/+6282387269716', 'Dev')}>
+          <button className="BookingButton" onClick={() => window.open('https://wa.me/+6282387269716', 'Dev')}>
              Pesan Kamar Sekarang
           </button>
         </div>
