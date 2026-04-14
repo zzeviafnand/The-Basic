@@ -59,58 +59,6 @@
   margin: 0 auto;
 }
 
-/* Floating Admin Trigger */
-.admin-trigger {
-  position: static;
-  top: 20px;
-  right: 20px;
-  background: white;
-  padding: 8px 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  cursor: pointer;
-  z-index: 100;
-  font-weight: bold;
-  font-size: 0.9rem;
-}
-
-/* Login Modal */
-.login-box {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  text-align: center;
-  width: 300px;
-}
-
-/* Admin Panel Styles */
-#admin-panel {
-  background: #f0f2f5;
-  padding: 40px 20px;
-  border-bottom: 2px solid #ddd;
-}
-
-.admin-grid {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.admin-control-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.admin-control-card input {
-  width: 100%;
-  padding: 8px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
 
 /* Floating Rules Button */
 .rules-trigger {
